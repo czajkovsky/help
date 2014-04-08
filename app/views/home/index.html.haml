@@ -2,7 +2,13 @@
   .container
     .row
       .col-lg-12
-        %h1 Help!
+        %h3
+          We already solved
+          %strong= Support.done.count
+          requests but there are still
+          %strong= Support.not_done.count
+          requests to solve.
+
     .row
       .col-lg-4.col-lg-offset-4
         = link_to 'I need help', topics_path, class: 'btn btn--lg btn--block'

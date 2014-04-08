@@ -1,11 +1,15 @@
 .home {
   .intro {
+    padding: 77px 0;
     background: $dark_background_color;
   }
-  h1 {
-    text-align: center;
-    font-size: $big_font * 2;
-    color: $white;
+  h3 {
+    @extend .text-center;
+    padding-bottom: 15px;
+    color: $inversed_base_color;
+    strong {
+      color: $active_color;
+    }
   }
   h2 {
     margin-top: 60px;
