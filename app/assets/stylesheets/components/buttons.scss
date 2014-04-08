@@ -1,0 +1,25 @@
+@mixin button-size($v-padding, $h-padding, $font-size, $border-radius) {
+  padding: $v-padding $h-padding;
+  border-radius: $border-radius;
+  font-size: $font-size;
+}
+
+@mixin button-color($text, $background) {
+  background: $background;
+  color: $text;
+  &:hover {
+    background: lighten($background, 7%);
+    color: $text;
+    text-decoration: none;
+  }
+}
+
+.btn {
+  @extend .bold;
+  @include button-color($white, $active_color);
+  @include button-size(10px, 15px, 13px, 4px);
+
+  &--lg {
+    @include button-size(20px, 30px, 19px, 6px);
+  }
+}

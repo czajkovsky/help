@@ -2,7 +2,7 @@
   %i.glyphicon.glyphicon-fire
   Help!
 .selection_buttons
-  = link_to 'I need help', topics_path, class: 'btn'
+  = link_to 'I need help', topics_path, class: 'btn btn--lg'
 .row
   .col-md-6
     %h2 Pending help requests:
@@ -16,6 +16,4 @@
         %li= render support
 
   .col-md-12.text-center
-    = link_to users_path, class: 'btn btn-primary' do
-      %i.glyphicon.glyphicon-user
-      See users ranking
+    = link_to 'See users ranking', users_path, class: 'btn btn-primary'
