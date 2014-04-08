@@ -18,14 +18,11 @@ ul.topic_list, ul.supporters  {
 ul.supporters {
   li {
     input {
-      @extend .btn;
-      @extend .btn-primary;
       font-size: $small_font;
     }
   }
   li:first-child {
     input {
-      @extend .btn-success;
       font-size: $small_font;
     }
   }
