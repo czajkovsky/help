@@ -1,5 +1,6 @@
 .navbar {
   @extend %border-bottom;
+  margin-bottom: 0;
   background: $white;
   .nav {
     > li > a {

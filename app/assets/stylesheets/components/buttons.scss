@@ -22,4 +22,9 @@
   &--lg {
     @include button-size(20px, 30px, 19px, 6px);
   }
+  &--block {
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
 }

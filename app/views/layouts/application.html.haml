@@ -9,6 +9,6 @@
     = csrf_meta_tags
   %body
     = render 'layouts/navigation'
-    %main.container{:role => "main", class: controller.controller_name }
+    %main{ role: 'main', class: controller.controller_name }
       = render 'layouts/messages'
       = yield
