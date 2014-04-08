@@ -22,11 +22,6 @@ img {
   @extend .col-md-6;
   @extend .text-center;
 }
-.submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
-}
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -40,7 +35,3 @@ section {
   @extend .row;
   margin-top: 20px;
 }
-ul.supporters li:first-child input {
-  @extend .btn;
-}
-
