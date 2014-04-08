@@ -10,9 +10,19 @@ a, a:hover {
   color: $active_color;
 }
 
-h1, h2, h3, h4, h5 {
-  color: $base_color;
-  line-height: 1.6;
+$headings: (1, 41px),
+           (2, 25px),
+           (3, 25px),
+           (4, 21px),
+           (5, 18px);
+
+@each $heading, $font-size in $headings {
+  h#{$heading} {
+    margin: floor($font-size * 0.6);
+    font-size: $font-size;
+    color: $base_color;
+    line-height: 1.6;
+  }
 }
 
 h1, h2, h5 {
