@@ -13,3 +13,10 @@ $sides: bottom left right top;
     }
   }
 }
+
+$directions: left right center justify;
+@each $direction in $directions {
+  .text-#{$direction} {
+    text-align: $direction;
+  }
+}
