@@ -1,6 +1,7 @@
-.row
-  .col-md-8.col-md-offset-2
+.container
+  .row
+    .col-md-12
     %h2 Select the topic you need help with:
-    %ul.topic_list
-      = render partial: 'topic', collection: topics
+  .row
+    = render partial: 'topic', collection: topics
   = render 'layouts/back_to_home'
