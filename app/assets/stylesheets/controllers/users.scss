@@ -5,18 +5,6 @@
   }
   ol {
     font-size: $small_font;
-    li:first-child {
-      @extend .text-success;
-      a {
-        @extend .text-success;
-      }
-    }
-    li:first-child + li {
-      @extend .text-primary;
-      a {
-        @extend .text-primary;
-      }
-    }
   }
   .user_header {
     margin-top: 15px;
@@ -28,7 +16,6 @@
     }
     .score {
       span {
-        @extend .text-success;
         font-size: $big_font * 2.5;
       }
     }
