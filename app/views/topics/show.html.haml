@@ -1,10 +1,11 @@
-.row
-  .col-md-8.col-md-offset-2
-    %h1
-      %i.glyphicon.glyphicon-fire
-      Need help with #{topic.small_title}?
-    = render 'supports/form', supporter: random_supporter, topic: topic
-.row
-  .col-md-8.col-md-offset-2
-    We selected a random supporter for you. All people that signed for this topic are:
-    #{topic.supporters}
+.container
+  .row
+    .col-md-8.col-md-offset-2
+      %h1
+        %i.glyphicon.glyphicon-fire
+        Need help with #{topic.small_title}?
+      = render 'supports/form', supporter: random_supporter, topic: topic
+  .row
+    .col-md-8.col-md-offset-2
+      We selected a random supporter for you. All people that signed for this topic are:
+      #{topic.supporters}

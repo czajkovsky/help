@@ -1,22 +1,23 @@
-.row.support_header
-  .col-md-4
-    .pull-left #{support.receiver_info}
-  .col-md-4
-    #{support.state_summary}
-    #{support.finish_button}
-    .clear-fix
-    #{support.topic_summary}
-  .col-md-4
-    .pull-right #{support.user_info}
+.container
+  .row.support_header
+    .col-md-4
+      .pull-left #{support.receiver_info}
+    .col-md-4
+      #{support.state_summary}
+      #{support.finish_button}
+      .clear-fix
+      #{support.topic_summary}
+    .col-md-4
+      .pull-right #{support.user_info}
 
-.row.support_body
-  .col-md-12
-    %h3 The request was:
-    %blockquote.markdown-body= preserve support.body
+  .row.support_body
+    .col-md-12
+      %h3 The request was:
+      %blockquote.markdown-body= preserve support.body
 
-.row.comments
-  = render 'comments/comments'
-  = render 'comments/form'
+  .row.comments
+    = render 'comments/comments'
+    = render 'comments/form'
 
 
 
