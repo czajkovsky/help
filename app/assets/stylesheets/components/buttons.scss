@@ -1,6 +1,7 @@
-@mixin button-size($v-padding, $h-padding, $font-size, $border-radius) {
+@mixin button-size($v-padding, $h-padding, $font-size, $border-radius, $line-height) {
   padding: $v-padding $h-padding;
   border-radius: $border-radius;
+  line-height: $line-height;
   font-size: $font-size;
 }
 
@@ -17,10 +18,11 @@
 .btn {
   @extend .bold;
   @include button-color($white, $active_color);
-  @include button-size(10px, 15px, 13px, 4px);
+  @include button-size(10px, 15px, 13px, 4px, 16px);
+  border: 1px solid transparent;
 
   &--lg {
-    @include button-size(20px, 30px, 19px, 6px);
+    @include button-size(20px, 30px, 19px, 6px, 22px);
   }
   &--block {
     width: 100%;
