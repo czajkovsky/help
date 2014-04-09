@@ -1,8 +1,7 @@
-.row
-  .col-md-8.col-md-offset-2
-    %h2.text-success
-      %i.glyphicon.glyphicon-heart
-      Click on the topics you can help with:
-    %ul.topic_list
-      = render partial: 'topic', collection: topics
+.container
+  .row
+    .col-md-12
+    %h2 Click on the topics you can help with:
+  .row
+    = render partial: 'topic', collection: topics
   = render 'layouts/back_to_home'

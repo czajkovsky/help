@@ -1,6 +1,7 @@
 @mixin item-color($label, $background, $border) {
   border: 2px solid $border;
   background: $background;
+  color: $label;
   .item__label {
     color: $label;
   }
@@ -12,22 +13,24 @@
 
 .item {
   @include item-color($active_color, $white, $border_color);
+  @extend .bold;
+  font-size: 18px;
   padding: 23px 20px;
+  width: 100%;
   border-radius: 4px;
   display: block;
   &__label {
     @extend .pull-left;
-    @extend .bold;
-    font-size: 18px;
   }
   &__count {
     @extend .pull-right;
     @extend .bold;
     padding: 1px 7px;
+    font-size: 14px;
     border-radius: 4px;
     display: inline-block;
   }
-  &:hover {
+  &:hover, &.active {
     @include item-color($white, $base_color, $base_color);
   }
   @include clearfix();
