@@ -9,7 +9,7 @@ class FlashDecorator < Draper::Decorator
   end
 
   def css_class
-    "alert-#{name == :notice ? "success" : "danger"}"
+    "alert-#{name == :notice ? 'success' : 'danger'}"
   end
 
   def id
