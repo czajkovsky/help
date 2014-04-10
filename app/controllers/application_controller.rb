@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+  expose(:flash_alerts){ FlashDecorator.decorate_collection(flash) }
   protect_from_forgery with: :exception
 
   include StaticRoutes

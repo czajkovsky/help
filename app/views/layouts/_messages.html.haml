@@ -1,8 +1,8 @@
 .container
   .row
-    - flash.each do |name, msg|
-      - if msg.is_a?(String)
+    - flash_alerts.each do |alert|
+      - if alert.msg.is_a?(String)
         .col-md-12
-          %div{ class: "alert alert-#{name == :notice ? "success" : "danger"}" }
+          .alert{ class: alert.css_class }
             %button.close{ aria: { hidden: 'true' }, data: { dismiss: 'alert' }, type: 'button' } &times;
-            = content_tag :div, msg, :id => "flash_#{name}"
+            %div{ id: "flash_#{alert.name}" }= alert.msg
