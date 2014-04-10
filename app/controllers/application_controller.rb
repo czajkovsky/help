@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  expose(:flash_alerts){ FlashDecorator.decorate_collection(flash) }
+  expose(:flash_alerts) { FlashDecorator.decorate_collection filtered_flash }
   protect_from_forgery with: :exception
 
   include StaticRoutes
@@ -24,6 +24,10 @@ class ApplicationController < ActionController::Base
         UserDecorator.decorate(user)
       end
     end
+  end
+
+  def filtered_flash
+    flash.select{ |f| f[1].is_a?(String) }
   end
 
 end
