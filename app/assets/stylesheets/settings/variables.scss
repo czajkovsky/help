@@ -1,14 +1,15 @@
-$base_color: #525771;
-$second_color: lighten($base_color, 18%);
-$active_color: #ffa529;
-$border_color: #edf3f7;
-$darken_background_color: #8b8e9d;
-$dark_background_color: #2f353e;
-$light_background_color: #fefefe;
-$inversed_base_color: #909db0;
-$box_background_color: lighten($border-color, 4%);
-
-$white: #fff;
+$colors: (
+  'white':      #fff,
+  'base':       #525771,
+  'second':     #7e83a1,
+  'active':     #ffa529,
+  'border':     #edf3f7,
+  'dark-bg':    #2f353e,
+  'light-bg':   #fefefe,
+  'darken-bg':  #8b8e9d,
+  'inv-base':   #909db0,
+  'box-bg':     #fbfcfd
+);
 
 $base_font_family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $light_font_family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

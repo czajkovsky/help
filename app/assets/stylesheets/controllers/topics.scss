@@ -17,9 +17,9 @@ ul.topic_list, ul.supporters  {
 
 .supporters-panel {
   @include font-family($light_font_family, $light_font);
-  color: $base_color;
-  border: 2px solid $border_color;
-  background: $light_background_color;
+  color: color('base');
+  border: 2px solid color('border');
+  background: color('box-bg');
   border-radius: 5px;
   padding: 15px;
 }
@@ -50,8 +50,8 @@ ul.topic_list, ul.supporters  {
   @include font-size(fs(8));
   padding: 1px 5px;
   font-weight: $bold_font;
-  color: $white;
-  background: $darken_background_color;
+  color: color('white');
+  background: color('darken-bg');
   border-radius: 3px;
 }
 

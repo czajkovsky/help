@@ -17,7 +17,7 @@
 
 .btn {
   @extend .bold;
-  @include button-color($white, $active_color);
+  @include button-color(color('white'), color('active'));
   @include button-size(10px, 15px, 13px, 4px, 16px);
   border: 1px solid transparent;
   white-space: nowrap;

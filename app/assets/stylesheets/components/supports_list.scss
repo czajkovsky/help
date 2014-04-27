@@ -11,18 +11,18 @@
         @include font-size(fs(5));
         margin: 0;
         padding: 16px 21px;
-        background: $white;
+        background: color('white');
         border: none;
       }
       a {
-        color: $base_color;
+        color: color('base');
         &:hover {
-          color: $active_color;
+          color: color('active');
         }
       }
       &.active a {
         @include font-family($base_font_family, $bold_font);
-        color: $active_color;
+        color: color('active');
       }
       &:last-of-type {
         border: none;
@@ -50,13 +50,13 @@
     }
     &:hover {
       .support__category {
-        color: $active_color;
+        color: color('active');
       }
     }
     &__details {
       @include font-size(fs(8));
       margin: -3px 0 0 0;
-      color: $second_color;
+      color: color('second');
     }
     @each $name in ('done', 'new', 'critical', 'worrying', 'ok') {
       &.#{$name} {

@@ -3,7 +3,7 @@
 }
 
 body, html {
-  color: $base_color;
+  color: color('base');
   font-size: fs(7);
   line-height: 1.6;
 }
@@ -13,7 +13,7 @@ body, html {
 }
 
 a, a:hover {
-  color: $active_color;
+  color: color('active');
 }
 
 @for $heading from 1 through 5 {
@@ -21,7 +21,7 @@ a, a:hover {
     $heading-size: fs($heading);
     @include font-size($heading-size);
     margin: floor($heading-size * 0.6) 0;
-    color: $base_color;
+    color: color('base');
     line-height: 1.6;
   }
 }

@@ -52,7 +52,7 @@
     }
 
     &:hover {
-      background: $box_background_color;
+      background: color('box-bg');
     }
 
     $platform-colors: (

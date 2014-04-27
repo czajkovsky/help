@@ -12,7 +12,7 @@
 }
 
 .item {
-  @include item-color($active_color, $white, $border_color);
+  @include item-color(color('active'), color('white'), color('border'));
   @extend .bold;
   @include font-size(fs(5));
   margin-bottom: 27px;
@@ -32,7 +32,7 @@
     display: inline-block;
   }
   &:hover, &.active {
-    @include item-color($white, $base_color, $base_color);
+    @include item-color(color('white'), color('base'), color('base'));
   }
   @include clearfix();
 }
