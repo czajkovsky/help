@@ -1,5 +1,5 @@
 .supporter-panel {
-  margin: 20px auto 40px;
+  margin-bottom: 20px;
   text-align: center;
   a {
     margin-left: 10px;
@@ -71,16 +71,12 @@
 
 @media (min-width: $screen-sm-min) {
   .supporter-panel {
-    margin: 40px auto;
+    margin: 36px auto 0 auto;
     text-align: right;
   }
 }
 
 @media (min-width: $screen-md-min) {
-  .supporter-panel {
-    margin: 40px 0 40px -250px;
-    text-align: center;
-  }
   #new_comment_form {
     padding-left: 80px;
   }
