@@ -1,15 +1,9 @@
 class FlashDecorator < Draper::Decorator
-
   def msg
     object[1]
   end
 
-  def name
-    object[0]
-  end
-
   def css_class
-    label = name == :notice ? 'success' : 'danger'
     "alert-#{label}"
   end
 
@@ -17,4 +11,13 @@ class FlashDecorator < Draper::Decorator
     "flash_#{name}"
   end
 
+  private
+
+  def name
+    object[0].to_s
+  end
+
+  def label
+    name == 'notice' ? 'success' : 'danger'
+  end
 end

@@ -14,6 +14,14 @@ describe SkipSupport do
       it 'assigns and save new user to support' do
         expect(support).to receive(:user=).with any_of(candidates)
         expect(support).to receive :save!
+        allow(SupportMailer).to receive(:help_me).with(support).and_return(double(deliver: true))
+        skip!
+      end
+
+      it 'sends email out to the new assignee' do
+        allow(support).to receive(:user=).with any_of(candidates)
+        allow(support).to receive :save!
+        expect(SupportMailer).to receive(:help_me).with(support).and_return(double(deliver: true))
         skip!
       end
     end
@@ -26,6 +34,7 @@ describe SkipSupport do
 
       allow(support).to receive(:user=).with(candidate)
       allow(support).to receive :save!
+      allow(SupportMailer).to receive(:help_me).with(support).and_return(double(deliver: true))
 
       skip!
 

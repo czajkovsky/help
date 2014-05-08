@@ -23,11 +23,16 @@ class CommentOnSupport
     subscribers.each { |user| SupportMailer.new_comment(support, @comment, user).deliver }
   end
 
-  private
-
   def subscribers
     ids = support.comments.pluck(:user_id).uniq - [user.id] + [support.receiver_id]
+    ids -= [support.receiver_id] if receivers_comment?
     User.where id: ids
+  end
+
+  private
+
+  def receivers_comment?
+    support.receiver_id == user.id
   end
   
 end

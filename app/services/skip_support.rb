@@ -10,6 +10,7 @@ class SkipSupport < Struct.new(:support)
     if can_skip?
       support.user = candidate
       support.save!
+      deliver_email
       self.success = true
     end
     self
@@ -34,6 +35,11 @@ class SkipSupport < Struct.new(:support)
 
   def next_candidate
     candidates.sample
+  end
+
+  def deliver_email
+    email = SupportMailer.help_me(support)
+    email.deliver
   end
 end
 

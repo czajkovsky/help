@@ -49,9 +49,11 @@ class SupportDecorator < Draper::Decorator
   end
 
   def action_button
-    return if done? || support.receiver == h.current_user
+    return if done?
 
-    if discussed?
+    if support.receiver == h.current_user
+      thanks_for_help_button
+    elsif discussed?
       finish_button
     else
       ack_button
@@ -80,10 +82,19 @@ class SupportDecorator < Draper::Decorator
 
   private
 
-  def finish_button
-    h.link_to h.raw('Mark as resolved'), h.finish_support_path(object),
-      method: :post, class: 'btn btn-success',
-      confirm: 'Are you sure you are done helping? This action will also set you as a supporter for this issue.'
+  def thanks_for_help_button
+    finish_button "I've received help from #{user}",
+                  "Are you sure? #{user} will receive a credit for that."
+  end
+
+  def finish_button(text = nil, confirmation = nil)
+    text ||= 'Mark as resolved'
+    confirmation ||= 'Are you sure you are done helping? This action will also
+                      set you as a supporter for this issue.'
+    h.link_to h.raw(text), h.finish_support_path(object),
+      method: :post,
+      confirm: confirmation,
+      class: 'btn btn-success'
   end
 
   def ack_button

@@ -7,18 +7,19 @@ class SupportsController < ApplicationController
   def create
     need_support = AskForSupport.new(current_user.object, topic, support_params)
     need_support.commence!
-    redirect_to topics_path, notice: "We asked #{need_support.supporter} to help you."
+
+    redirect_to root_path, notice: t('support.create.notice',
+                                     name: need_support.supporter)
   end
 
   def skip
     skip_service = SkipSupport.new support
     skip_service.commence!
     if skip_service.success?
-      redirect_to support_path(support), flash: { notice: 'As you wish, you lazy person!' }
+      redirect_to support_path(support), notice: t('support.skip.notice')
     else
-      redirect_to support_path(support), flash: {
-        error: 'Sorry, but no one else is able to help. It all depends on you.'
-      }
+      # FIXME: doesn't work with `error: ...` syntax (no flash wrapper)
+      redirect_to support_path(support), flash: { error: t('support.skip.error') }
     end
   end
 
@@ -26,13 +27,14 @@ class SupportsController < ApplicationController
     acknowledge_support = AcknowledgeSupport.new current_user.object, support
     acknowledge_support.commence!
 
-    redirect_to root_path, notice: 'Support acknowledged! now get this thing done!'
+    redirect_to support_path(support),
+      notice: t('support.ack.notice')
   end
 
   def finish
     support_finish = FinishSupport.new(current_user.object, support)
     support_finish.commence!
-    redirect_to root_path, notice: "Finished helping. Awesome!"
+    redirect_to root_path, notice: t('support.finish.notice')
   end
 
   private
