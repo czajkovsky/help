@@ -83,7 +83,7 @@ class SupportDecorator < Draper::Decorator
   private
 
   def thanks_for_help_button
-    finish_button "I've received help from #{user}",
+    finish_button "I've received help!",
                   "Are you sure? #{user} will receive a credit for that."
   end
 
