@@ -1,17 +1,19 @@
 .container
   .row
-    .col-xs-12
+    .col-md-8
       .row
-        .col-sm-8.col-md-7
+        .col-sm-8
           %h1.header-line
             = support.ticket_id
             %span.capitalize_text
               = support.topic
-          %h3.subheader-line
-            = support.title
-        .col-sm-4.col-md-5.supporter-panel
+        .col-sm-4.supporter-panel
           = support.skip_button
           = support.action_button
+      .row.hidden-xs
+        .col-xs-12
+          %h3.subheader-line
+            = support.title
   .row
     .col-md-8
       .row
